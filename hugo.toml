@@ -1,6 +1,6 @@
 baseURL = 'jjasser.github.io'
 languageCode = 'en-us'
-title = 'Jacob J's Blog'
+title = 'Jacob J Blog'
 theme = 'anatole'
 profilePicture = 'images/images.jpeg'
 
