@@ -1,5 +1,43 @@
-baseURL = 'https://example.org/'
+baseURL = 'jjasser.github.io'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Jacob J's Blog'
 theme = 'anatole'
+profilePicture = 'images/images.jpeg'
+
+description = """
+Call me Jo
+Blogging from California
+"""
+
+summarylength = 10
+enableEmoji = true
+
+# Syntax highlighting
+pygmentsUseClasses = true   
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+displaymode = "dark"
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+
 
