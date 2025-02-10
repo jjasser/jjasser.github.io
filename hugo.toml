@@ -2,22 +2,23 @@ baseURL = 'jjasser.github.io'
 languageCode = 'en-us'
 title = 'Jacob J Blog'
 theme = 'anatole'
-profilePicture = 'static/images/profile.jpg'
+summarylength = 10
+enableEmoji = true
 
+
+[params]
+profilePicture = 'static/images/profile.jpg'
 description = """
 Call me Jo
 Blogging from California
 """
-
-summarylength = 10
-enableEmoji = true
-
+displaymode = "dark"
 # Syntax highlighting
 pygmentsUseClasses = true   
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
-displaymode = "dark"
+
 
 [menu]
 
