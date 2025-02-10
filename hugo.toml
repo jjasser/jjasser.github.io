@@ -9,7 +9,6 @@ enableEmoji = true
 [params]
 profilePicture = "/images/jacob.jpeg"
 description = """
-Call me Jo
 Blogging from California
 """
 displaymode = "dark"
