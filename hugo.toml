@@ -34,9 +34,9 @@ url = "https://www.linkedin.com/in/jacobjasser/"
   url = "/"
 
   [[menu.main]]
-  name = "Posts"
+  name = "Archive"
   weight = 200
-  identifier = "posts"
+  identifier = "archive"
   url = "/post/"
 
   [[menu.main]]
@@ -45,5 +45,9 @@ url = "https://www.linkedin.com/in/jacobjasser/"
   identifier = "about"
   url = "/about/"
 
-
+  [[menu.main]]
+  name = "CERTIFICATIONS"
+  weight = 400
+  identifier = "certifications"
+  url = "/certifications/"
 
