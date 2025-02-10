@@ -9,19 +9,26 @@ enableEmoji = true
 [params]
 profilePicture = "/images/jacob.jpeg"
 description = """
-Blogging from California
+Welcome to my blog!
 """
 displaymode = "dark"
 # Syntax highlighting
 pygmentsUseClasses = true   
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
+Copyright = "JJASSER - All rights reserved."
+contentratio = 0.7
 
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
 title = "Linkedin"
 url = "https://www.linkedin.com/in/jacobjasser/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/thetechguy-it"
 
 
 [menu]
