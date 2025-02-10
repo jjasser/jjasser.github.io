@@ -2,16 +2,16 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme=""
+  data-theme="dark"
   
-    class="html theme--light"
+    class="html theme--dark"
   
-><head>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <title>
     
         |
-        My New Hugo Site
+        Jacob J Blog
       
 
     
@@ -22,7 +22,8 @@
   <meta name="author" content="" />
   <meta
     name="description"
-    content=""
+    content="Welcome to my blog!
+"
   />
   
   
@@ -30,8 +31,8 @@
     
     <link
       rel="stylesheet"
-      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      href="/scss/main.min.12a30d1163d2ce4289809f1f47779be37787dc28017b72f568f349b3def69746.css"
+      integrity="sha256-EqMNEWPSzkKJgJ8fR3eb43eH3CgBe3L1aPNJs972l0Y="
       crossorigin="anonymous"
       type="text/css"
     />
@@ -84,10 +85,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://example.org/" />
+  <link rel="canonical" href="//localhost:1313/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="My New Hugo Site" />
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Jacob J Blog" />
   
   
   
@@ -117,14 +118,16 @@
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:title" content="Jacob J Blog">
+  <meta name="twitter:description" content="Welcome to my blog!">
 
 
 
   
-  <meta property="og:url" content="https://example.org/">
-  <meta property="og:site_name" content="My New Hugo Site">
-  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:url" content="//localhost:1313/">
+  <meta property="og:site_name" content="Jacob J Blog">
+  <meta property="og:title" content="Jacob J Blog">
+  <meta property="og:description" content="Welcome to my blog!">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
@@ -135,11 +138,11 @@
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      "name": "My New Hugo Site",
-      "url": "https:\/\/example.org\/",
-      "description": "",
-      "thumbnailUrl": "https:\/\/example.org\/",
-      "license": ""
+      "name": "Jacob J Blog",
+      "url": "\/\/localhost:1313\/",
+      "description": "Welcome to my blog!\n",
+      "thumbnailUrl": "\/\/localhost:1313\/",
+      "license": "JJASSER - All rights reserved."
     }
   </script>
 
@@ -160,21 +163,45 @@
     <div class="sidebar__introduction">
       <img
         class="sidebar__introduction-profileimage"
-        src="/"
+        src="/images/jacob.jpeg"
         alt="profile picture"
       />
       
         <div class="sidebar__introduction-title">
           <h1>
-            <a href="/"></a>
+            <a href="//localhost:1313/"></a>
           </h1>
         </div>
       
       <div class="sidebar__introduction-description">
-        <p></p>
+        <p>Welcome to my blog!<br /></p>
       </div>
     </div>
     <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/jacobjasser/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/thetechguy-it"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
       
     </ul>
   </div><footer class="footer footer__sidebar">
@@ -182,8 +209,7 @@
     <li class="footer__item">
       &copy;
       
-        
-        2025
+        JJASSER - All rights reserved.
       
     </li>
     
@@ -215,6 +241,68 @@
   <nav class="nav">
     <ul class="nav__list" id="navMenu">
       
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+                class="nav__link--active"
+              
+              href="/"
+              
+              title=""
+              >HOME</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >ARCHIVE</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >ABOUT</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/certifications/"
+              
+              title=""
+              >CERTIFICATIONS</a
+            >
+          </li>
+        
+
       
     </ul>
     <ul class="nav__list nav__list--end">
@@ -256,7 +344,7 @@
       
       <div class="post__content">
         
-          <h3><a href="/posts/first-post/">MY FIRST POST</a></h3>
+          <h3><a href="/posts/first-post-test/">FIRST POST TEST</a></h3>
         
         
           <p>First post!</p>
@@ -269,12 +357,16 @@
         <span class="post__footer-date"
           >
             
-              Mon, Jan 1, 0001
+              Sat, Feb 1, 2025
             
 
           </span
         >
         
+
+        
+          <span><a class="tag" href="/tags/2025/">2025</a><a class="tag" href="/tags/test/">Test</a></span>
+
 
         
       </div>
@@ -291,8 +383,7 @@
     <li class="footer__item">
       &copy;
       
-        
-        2025
+        JJASSER - All rights reserved.
       
     </li>
     
