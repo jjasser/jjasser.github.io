@@ -27,19 +27,19 @@ url = "https://www.linkedin.com/in/jacobjasser/"
 [menu]
 
   [[menu.main]]
-  name = "Home"
+  name = "HOME"
   identifier = "home"
   weight = 100
   url = "/"
 
   [[menu.main]]
-  name = "Archive"
+  name = "ARCHIVE"
   weight = 200
   identifier = "archive"
-  url = "/archive/"
+  url = "/post/"
 
   [[menu.main]]
-  name = "About"
+  name = "ABOUT"
   weight = 300
   identifier = "about"
   url = "/about/"
