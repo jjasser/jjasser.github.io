@@ -7,7 +7,7 @@ enableEmoji = true
 
 
 [params]
-profilePicture = "/home/jobin/Desktop/jobby/static/images"
+profilePicture = "/home/jobin/Desktop/jobby/static/images/bebo.jpeg"
 description = """
 Call me Jo
 Blogging from California
@@ -18,6 +18,11 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
+
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/jacobjasser/"
 
 
 [menu]
