@@ -17,7 +17,7 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 Copyright = "JJASSER - All rights reserved."
-contentratio = 0.9
+contentratio = 0.8
 
 
 [[params.socialIcons]]
