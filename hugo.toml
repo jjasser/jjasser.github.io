@@ -40,9 +40,9 @@ url = "https://github.com/jjasser"
   url = "/"
 
   [[menu.main]]
-  name = "ARCHIVE"
+  name = "POSTS"
   weight = 200
-  identifier = "archive"
+  identifier = "posts"
   url = "/post/"
 
   [[menu.main]]
