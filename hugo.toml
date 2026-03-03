@@ -9,7 +9,7 @@ enableEmoji = true
 [params]
 profilePicture = "/images/jacob.jpeg"
 description = """
-Welcome to my blog!
+AI Security | Cloud Security!
 """
 displaymode = "dark"
 # Syntax highlighting
