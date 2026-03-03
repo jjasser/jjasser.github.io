@@ -9,7 +9,7 @@ enableEmoji = true
 [params]
 profilePicture = "/images/jacob.jpeg"
 description = """
-AI Security | Cloud Security!
+AI Security | Cloud Security
 """
 displaymode = "dark"
 # Syntax highlighting
