@@ -11,7 +11,7 @@ categories = [
     "AI Security",
 ]
 series = ["AI Red Teaming"]
-thumbnail= "images/gand4.png"
+thumbnail= "images/gand5.png"
 +++
 
 I remember sitting down with [Gandalf by Lakera](https://gandalf.lakera.ai/) thinking it'd take maybe twenty minutes. An hour later I was hex-encoding attack strings and deep in a story about two bunnies in love. Not where I expected my evening to go.
