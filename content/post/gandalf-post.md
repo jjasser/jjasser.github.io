@@ -247,8 +247,8 @@ Looking at this table, what stands out is that every single defense is reactive.
 
 ## What I've Come to Think About This
 
-I've noticed the instinct when building AI-assisted tooling is to add guardrails at the model level: system prompt instructions, keyword filters, maybe a secondary reviewer. It feels like defense. It isn't.
+I've noticed the instinct when building AI-assisted tooling is to add guardrails at the model level: system prompt instructions, keyword filters, maybe a secondary reviewer. It feels like defense but isn't.
 
-Here's the more optimistic realization: the fixes aren't mysterious. Defense needs to happen at the architecture level. Treat model output as untrusted data. Enforce strict input/output schemas. Separate privilege so the model can't act on instructions it receives from user input. It was never a filtering problem. **It was a trust boundary problem.**
+Here's the more optimistic realization: the fixes aren't mysterious. Defense needs to happen at the architecture level. Treat model output as untrusted data. Enforce strict input/output schemas. Separate privilege so the model can't act on instructions it receives from user input. **This is a trust boundary problem.**
 
-Gandalf makes that concrete in a way that's hard to argue with. And that's what makes it worth the hour you're about to spend on it.
+Gandalf makes that concrete in a way that's hard to argue with. And that's what makes it worth the hour or more you're about to spend on it.
