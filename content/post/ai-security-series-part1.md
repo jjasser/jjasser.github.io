@@ -11,8 +11,9 @@ categories = [
     "AI Security",
 ]
 series = ["AI Red Teaming"]
-thumbnail= "images/part11.png"
+thumbnail= "images/part1.png"
 +++
+<!-- thumbnail is 1504 x 600 -->
 
 I've been working through a structured AI red teaming curriculum over the past few weeks, and early on something clicked that reframed how I'd been thinking about this whole space. It wasn't a technique or a tool. It was the realization that AI systems are a fundamentally different class of target, and that the mental models I'd built doing cloud security work don't map cleanly onto this.
 
