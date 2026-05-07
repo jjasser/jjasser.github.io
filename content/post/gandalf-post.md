@@ -14,7 +14,7 @@ series = ["AI Red Teaming"]
 thumbnail= "images/gand5.png"
 +++
 
-<!-- thumbnail is 1504 x 600 -->
+<!-- thumbnail is 1300 x 500 -->
 
 I remember sitting down with [Gandalf by Lakera](https://gandalf.lakera.ai/) thinking it'd take maybe twenty minutes. An hour later I was hex-encoding attack strings and deep in a story about two bunnies in love. Not where I expected my evening to go.
 
