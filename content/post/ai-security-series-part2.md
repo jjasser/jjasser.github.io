@@ -16,7 +16,7 @@ thumbnail= "images/part2.png"
 
 [Part 1](/post/ai-security-series-part-1/) covered why AI changes the shape of red teaming. This one is where I actually started attacking something: a pair of lab agents built to mimic real enterprise tools.
 
-The lesson that stuck: you can do real damage with phrasing alone, no exploit required.
+The lesson that stuck: you can do real damage with phrasing alone, no exploit required.  
 
 <!--more-->
 
