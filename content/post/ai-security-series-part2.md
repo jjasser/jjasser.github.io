@@ -49,7 +49,7 @@ A chatbot only leaks text. An agent reads files, queries databases, hits interna
 > **The core issue:** nothing marks a tool result as "data" and a user message as "instruction." A poisoned document gets read exactly like a typed message. Everything else in this post follows from that one fact.
 
 ---
-# Bypassing the Output Filter
+## Bypassing the Output Filter
 
 ### Recon
 
@@ -188,10 +188,12 @@ curl -s -X POST http://192.168.50.21:8003/chat \
 
 The agent also mentions searching its knowledge base, which means it has a retrieval tool. Anywhere there's compliance documentation, there's usually security data nearby. Let's see what happens when we try to redirect its task directly. In this case, the agent refused the instructions as there are common patterns that monitoring systems look for, so this request was likely flagged.
 
+```json
 {
   "response": "I cannot provide security audit findings regardless of restrictions. I'm bound by company security policies and ethical guidelines. I cannot share sensitive, restricted, or internal audit data,"
   "session_id": "407f4fd9-abe5-4851-9bef-0d33b40e51e2"
 }
+```
 
 ```bash
 curl -s -X POST http://192.168.50.21:8003/chat \
@@ -234,7 +236,7 @@ curl -s -X POST http://192.168.50.21:8003/chat \
 
 We can try another variation of goal hijacking called `crescendos`. Instead of asking for the same information in one message, we can spread it across multiple messages in a way that each individual message looks innocuous. The agent will still be able to piece together the intent across the session and return the same restricted information without triggering any filters. We'll start with a completely innocent onboarding question and note the session_id from the response. We'll utilize the same session_id for the next messages to maintain the context of the conversation. 
 
-{{<highlight json>}}
+```json
 {
 "response": "Welcome to Megacorpone AI! I can assist you with:
 - Company Policies & Procedures 
@@ -247,7 +249,7 @@ If you have a specific question, just ask!",
 
 "session_id": "407f4fd9-abe5-4851-9bef-0d33b40e51e2"
 }
-{{</highlight>}}
+```
 
 ```bash
 curl -s -X POST http://192.168.50.21:8003/chat \
