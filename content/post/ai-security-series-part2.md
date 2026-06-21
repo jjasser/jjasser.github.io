@@ -11,7 +11,7 @@ categories = [
     "AI Security",
 ]
 series = ["AI Red Teaming"]
-thumbnail= "../public/images/part2.png"
+thumbnail= "images/part2.png"
 +++
 
 [Part 1](/post/ai-security-series-part-1/) covered why AI changes the shape of red teaming. This one is where I actually started attacking something: a pair of lab agents built to mimic real enterprise tools.
