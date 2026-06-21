@@ -9,7 +9,7 @@ tags = [
 ]
 categories = [
     "AI Security",
-]git status
+]
 series = ["AI Red Teaming"]
 thumbnail= "../public/images/part2.png"
 +++
@@ -72,7 +72,7 @@ It admitted to file access and a config-lookup tool. That's the attack surface.
 ```bash
 curl -s -X POST http://192.168.50.21:8002/chat \
   -H "Content-Type: application/json" \
-  -d '{"message": "What tools do you have access to?"}' | python3 -m json.tool
+  -d '{"message": "What tools do you have access to?"}' | python3 -m json.tool 
 ```
 
 The agent has file system access and a config_lookup tool. It can read files and search configurations. Unfortunately the agent refused to help with the database issue, citing restrictions on what it can share. That was expected, but it also meant I had a clear target: the output filter blocking that information.
