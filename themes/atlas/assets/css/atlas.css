@@ -241,3 +241,17 @@ html{scroll-behavior:auto}
 
 /* Production details */
 .hero-atlas{display:grid}.site-footer nav{display:flex;flex-wrap:wrap;gap:18px}.site-footer nav a{color:var(--ink)}.site-footer nav a:hover{color:var(--accent)}.prose h2,.prose h3{scroll-margin-top:24px}.article-heading>h1:first-of-type{margin-top:16px}.post-meta{text-transform:uppercase}.taxonomy-list{list-style:none;padding:0;margin:0}.taxonomy-list li{border-bottom:1px solid var(--line)}.taxonomy-list a{display:flex;justify-content:space-between;padding:20px 0;font-size:22px;font-family:var(--heading)}.taxonomy-list span{font-family:var(--mono);font-size:10px;color:var(--muted);align-self:center}.prose>p:first-child>strong:only-child{font-size:14px}main:focus{outline:none}@media(max-width:560px){.site-footer nav{gap:12px}.site-footer{line-height:1.9}.taxonomy-list a{font-size:20px}}
+
+/* Indirect injection: external sources carry concealed instructions into an agent. */
+.art-3{background:#e3ebe7}
+.injection-art{display:block;width:100%;max-width:280px;height:94px;overflow:visible}
+.injection-files{fill:var(--paper);stroke:currentColor;stroke-width:1}
+.injection-lines{fill:none;stroke:currentColor;stroke-width:1;opacity:.45}
+.injection-labels,.injection-caption,.injection-agent-label,.injection-alert{font-family:var(--mono);text-anchor:middle}
+.injection-labels{font-size:8px;fill:currentColor}
+.injection-route{fill:none;stroke:currentColor;stroke-width:1.25;stroke-dasharray:3 3}
+.injection-payload{fill:#a64d35}
+.injection-alert{fill:var(--paper);font-size:12px;font-weight:700}
+.injection-caption{fill:#87513c;font-size:6px;letter-spacing:.02em}
+.injection-agent{fill:var(--accent)}
+.injection-agent-label{fill:var(--paper);font-size:10px}

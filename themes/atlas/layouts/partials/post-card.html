@@ -1,5 +1,17 @@
 {{ $p := .post }}{{ $art := $p.Params.art | default (mod .index 3) }}
 <article class="post-card">
-  <a class="post-art art-{{ $art }}" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true"><span class="art-overline">{{ if eq $art 0 }}TRUST BOUNDARIES{{ else if eq $art 1 }}A DIFFERENT ATTACK SURFACE{{ else }}PROMPTS UNDER PRESSURE{{ end }}</span><div class="art-graphic">{{ if eq $art 0 }}<span class="art-node">USER</span><span class="art-connector">→</span><span class="art-node node-main">AGENT</span><span class="art-connector">→</span><span class="art-node">TOOLS</span>{{ else if eq $art 1 }}<span class="orb orb-one"></span><span class="orb orb-two"></span><span class="orb-label">AI × SECURITY</span>{{ else }}<span class="prompt-symbol">&gt;_</span><span class="prompt-lines"><i></i><i></i><i></i></span>{{ end }}</div><span class="art-bottom">FIELD NOTES / {{ printf "%02d" (add .index 1) }} <b>↗</b></span></a>
+  <a class="post-art art-{{ $art }}" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true"><span class="art-overline">{{ if eq $art 3 }}INDIRECT PROMPT INJECTION{{ else if eq $art 0 }}TRUST BOUNDARIES{{ else if eq $art 1 }}A DIFFERENT ATTACK SURFACE{{ else }}PROMPTS UNDER PRESSURE{{ end }}</span><div class="art-graphic">{{ if eq $art 3 }}<svg class="injection-art" viewBox="0 0 280 94" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <g class="injection-files">
+    <path d="M14 20h19l8 8v33H14z"/><path d="M33 20v8h8"/>
+    <path d="M48 20h19l8 8v33H48z"/><path d="M67 20v8h8"/>
+    <path d="M82 20h19l8 8v33H82z"/><path d="M101 20v8h8"/>
+  </g>
+  <g class="injection-lines"><path d="M20 34h14m-14 6h14m-14 6h9M54 34h14m-14 6h14m-14 6h9M88 34h14m-14 6h14m-14 6h9"/></g>
+  <g class="injection-labels"><text x="27.5" y="78">DOC</text><text x="61.5" y="78">WEB</text><text x="95.5" y="78">CODE</text></g>
+  <path class="injection-route" d="M119 42h57m-6-5 6 5-6 5"/>
+  <rect class="injection-payload" x="137" y="33" width="18" height="18"/><text class="injection-alert" x="146" y="46">!</text>
+  <text class="injection-caption" x="148" y="78">HIDDEN INSTRUCTIONS</text>
+  <rect class="injection-agent" x="186" y="24" width="80" height="37"/><text class="injection-agent-label" x="226" y="47">AGENT</text>
+</svg>{{ else if eq $art 0 }}<span class="art-node">USER</span><span class="art-connector">→</span><span class="art-node node-main">AGENT</span><span class="art-connector">→</span><span class="art-node">TOOLS</span>{{ else if eq $art 1 }}<span class="orb orb-one"></span><span class="orb orb-two"></span><span class="orb-label">AI × SECURITY</span>{{ else }}<span class="prompt-symbol">&gt;_</span><span class="prompt-lines"><i></i><i></i><i></i></span>{{ end }}</div><span class="art-bottom">FIELD NOTES / {{ printf "%02d" (add .index 1) }} <b>↗</b></span></a>
   <div class="card-copy"><div class="post-meta"><span>{{ with $p.Params.series }}{{ index . 0 }}{{ else }}FIELD NOTES{{ end }}</span><span>{{ $p.ReadingTime }} MIN READ</span></div><h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3><p>{{ $p.Description }}</p><div class="card-bottom"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "Jan 2, 2006" }}</time><a href="{{ $p.RelPermalink }}" aria-label="Read {{ $p.Title }}">Read article <span>↗</span></a></div></div>
 </article>

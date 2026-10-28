@@ -8,7 +8,7 @@ tags = ["ai-security", "red-teaming", "prompt-injection", "agent-security"]
 categories = ["AI Security"]
 series = ["AI Red Teaming"]
 aliases = ["/post/ai-security-series-part-3/"]
-art = 0
+art = 3
 +++
 
 [Part 2](/post/ai-security-series-part2/) covered attacks typed into an agent's chat. Here, I moved them into documents, a web page, and submitted code, where the agent encountered them during normal work.
