@@ -1,0 +1,4 @@
+name = "Jasser Preview"
+license = "MIT"
+description = "Five responsive design directions for Jacob Jasser's security blog."
+min_version = "0.141.0"

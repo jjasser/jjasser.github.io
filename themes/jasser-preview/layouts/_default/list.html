@@ -1,0 +1,4 @@
+{{ define "main" }}
+<section class="page-intro"><p class="eyebrow">JACOB JASSER / THE ARCHIVE</p><h1>Writing<span>.</span></h1><p>Experiments, walkthroughs, and lessons from working across AI security.</p></section>
+<section class="writing-section archive"><div class="section-heading"><h2>All explorations</h2><span>{{ len .RegularPages }} articles</span></div><div class="post-grid">{{ range $index, $post := .RegularPages.ByDate.Reverse }}{{ partial "post-card.html" (dict "post" $post "index" $index) }}{{ end }}</div></section>
+{{ end }}

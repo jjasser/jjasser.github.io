@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="reader">
+  <header class="article-heading">
+    <a class="text-link" href="{{ "/post/" | relURL }}">← All writing</a>
+    {{ with .Params.series }}<p class="eyebrow">{{ range . }}{{ . }}{{ end }}</p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+    {{ if eq .Section "post" }}<div class="article-byline"><img src="{{ .Site.Params.profilePicture | relURL }}" alt="" width="38" height="38"><span>{{ .Params.author | default .Site.Params.author }}</span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time><span>{{ .ReadingTime }} min read</span></div>{{ end }}
+  </header>
+  {{ if gt (len .Fragments.Headings) 0 }}<details class="article-toc"><summary>In this article</summary>{{ .TableOfContents }}</details>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  <a class="button" href="{{ "/post/" | relURL }}">← Back to all writing</a>
+</article>
+{{ end }}

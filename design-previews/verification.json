@@ -1,0 +1,52 @@
+[
+  {
+    "design": "atlas",
+    "desktop": "1440px",
+    "mobile": "390px",
+    "home": "pass",
+    "article": "pass",
+    "about": "pass",
+    "switcher": "pass",
+    "errors": []
+  },
+  {
+    "design": "cipher",
+    "desktop": "1440px",
+    "mobile": "390px",
+    "home": "pass",
+    "article": "pass",
+    "about": "pass",
+    "switcher": "pass",
+    "errors": []
+  },
+  {
+    "design": "folio",
+    "desktop": "1440px",
+    "mobile": "390px",
+    "home": "pass",
+    "article": "pass",
+    "about": "pass",
+    "switcher": "pass",
+    "errors": []
+  },
+  {
+    "design": "fieldnotes",
+    "desktop": "1440px",
+    "mobile": "390px",
+    "home": "pass",
+    "article": "pass",
+    "about": "pass",
+    "switcher": "pass",
+    "errors": []
+  },
+  {
+    "design": "signal",
+    "desktop": "1440px",
+    "mobile": "390px",
+    "home": "pass",
+    "article": "pass",
+    "about": "pass",
+    "switcher": "pass",
+    "errors": []
+  }
+]

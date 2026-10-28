@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Jacob Jasser's notes on AI security, cloud security, and security architecture.{{ end }}">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ if not .IsHome }}{{ .Title | default "About" }} · {{ end }}Jacob Jasser</title>
+  <script>const designs=['atlas','cipher','folio','fieldnotes','signal'];let selected=new URLSearchParams(location.search).get('design');try{selected=selected||sessionStorage.getItem('jasser-design')}catch{}document.documentElement.dataset.design=designs.includes(selected)?selected:'{{ .Site.Params.design | default "atlas" }}';</script>
+  <link rel="stylesheet" href="{{ "design/style.css" | relURL }}">
+  <script defer src="{{ "design/preview.js" | relURL }}"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="identity" href="{{ "/" | relURL }}" aria-label="Jacob Jasser home"><span class="monogram">JJ<span>.</span></span><span class="identity-name">Jacob Jasser<span>AI SECURITY ENGINEER</span></span></a>
+      <nav aria-label="Main navigation"><a href="{{ "/" | relURL }}" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a><a href="{{ "/post/" | relURL }}" {{ if eq .Section "post" }}aria-current="page"{{ end }}>Writing</a><a href="{{ "/about/" | relURL }}" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a></nav>
+      <a class="header-contact" href="https://www.linkedin.com/in/jacobjasser/" target="_blank" rel="noopener">Let's connect <span aria-hidden="true">↗</span></a>
+      <aside class="sidebar-intro"><img src="{{ "images/jacob.jpeg" | relURL }}" alt="Jacob Jasser" width="120" height="120"><h2>Jacob Jasser<span>.</span></h2><p>AI Security Engineer</p><p class="sidebar-bio">Understanding the whole system.<br>Securing every layer.</p><div><a href="https://github.com/jjasser">GitHub ↗</a><a href="https://www.linkedin.com/in/jacobjasser/">LinkedIn ↗</a></div></aside>
+      <span class="sidebar-foot">NOTES FROM THE FIELD<br>IRVINE, CALIFORNIA</span>
+    </header>
+    <main id="main">{{ block "main" . }}{{ end }}</main>
+    <footer class="site-footer"><span>© {{ now.Year }} Jacob Jasser</span><span>Always learning. Always questioning.</span><a href="https://github.com/jjasser" target="_blank" rel="noopener">GitHub ↗</a></footer>
+  </div>
+  <nav class="design-dock" aria-label="Choose a design preview"><span class="dock-label">DESIGN PREVIEW</span><a data-design="atlas" href="?design=atlas"><i>01</i> Atlas</a><a data-design="cipher" href="?design=cipher"><i>02</i> Cipher</a><a data-design="folio" href="?design=folio"><i>03</i> Folio</a><a data-design="fieldnotes" href="?design=fieldnotes"><i>04</i> Fieldnotes</a><a data-design="signal" href="?design=signal"><i>05</i> Signal</a></nav>
+</body>
+</html>

@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on Jacob J Blog</title>
-    <link>//localhost:1313/categories/</link>
-    <description>Recent content in Categories on Jacob J Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Jacob Jasser</title><link>https://jjasser.github.io/categories/</link><description>Recent content in Categories on Jacob Jasser</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jjasser.github.io/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Security</title><link>https://jjasser.github.io/categories/ai-security/</link><pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate><guid>https://jjasser.github.io/categories/ai-security/</guid><description/></item></channel></rss>

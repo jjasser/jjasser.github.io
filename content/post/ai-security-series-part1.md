@@ -1,5 +1,6 @@
 +++
 author = "Jacob"
+aliases = ["/post/ai-security-series-part-1/"]
 title = "AI Red Teaming Is Different: What I'm Learning in the Security Series (Part 1)"
 date = "2026-05-06"
 description = "Starting an AI security series with the foundational question: why is red teaming AI systems genuinely different from traditional pentesting, and what does that mean for how we approach it?"

@@ -1,0 +1,8 @@
+theme = "jasser-preview"
+baseURL = "http://localhost:1313/"
+title = "Jacob Jasser"
+staticDir = ["static", "design-previews"]
+disableKinds = ["taxonomy", "term"]
+
+[params]
+design = "atlas"

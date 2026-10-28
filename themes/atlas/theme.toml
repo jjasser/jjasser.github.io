@@ -1,0 +1,4 @@
+name = "Atlas"
+license = "MIT"
+description = "An editorial security journal for Jacob Jasser."
+min_version = "0.141.0"

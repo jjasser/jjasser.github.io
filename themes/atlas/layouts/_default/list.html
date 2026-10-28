@@ -1,0 +1,6 @@
+{{ define "main" }}
+<section class="page-intro"><p class="eyebrow">JACOB JASSER / THE ARCHIVE</p><h1>{{ .Title }}<span>.</span></h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}</section>
+<section class="writing-section archive"><div class="section-heading"><h2>{{ if eq .Kind "taxonomy" }}Browse {{ lower .Title }}{{ else }}All explorations{{ end }}</h2><span>{{ len .RegularPagesRecursive }} {{ if eq (len .RegularPagesRecursive) 1 }}article{{ else }}articles{{ end }}</span></div>
+{{ if eq .Kind "taxonomy" }}<ul class="taxonomy-list">{{ range .Data.Terms.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span>{{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }} ↗</span></a></li>{{ end }}</ul>
+{{ else }}<div class="post-grid">{{ range $index, $post := .RegularPagesRecursive.ByDate.Reverse }}{{ partial "post-card.html" (dict "post" $post "index" $index) }}{{ end }}</div>{{ end }}</section>
+{{ end }}

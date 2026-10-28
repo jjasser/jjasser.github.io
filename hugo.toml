@@ -1,59 +1,37 @@
-baseURL = "jjasser.github.io"
+baseURL = "https://jjasser.github.io/"
 languageCode = "en-us"
-title = "Jacob J Blog"
-theme = "anatole"
-summarylength = 10
+title = "Jacob Jasser"
+theme = "atlas"
+summaryLength = 30
 enableEmoji = true
-
+enableRobotsTXT = true
 
 [params]
-profilePicture = "/images/jacob.jpeg"
-description = """
-AI Security | Cloud Security
-"""
-displaymode = "dark"
-# Syntax highlighting
-pygmentsUseClasses = true   
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-Copyright = "JJASSER - All rights reserved."
-contentratio = 0.8
+profilePicture = "images/jacob.jpeg"
+author = "Jacob Jasser"
+description = "Practical explorations of AI security across models, RAG, agents, and cloud infrastructure."
+linkedin = "https://www.linkedin.com/in/jacobjasser/"
+github = "https://github.com/jjasser"
 
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
-[[params.socialIcons]]
-icon = "fab fa-linkedin"
-title = "Linkedin"
-url = "https://www.linkedin.com/in/jacobjasser/"
+[markup.highlight]
+noClasses = false
 
-[[params.socialIcons]]
-icon = "fab fa-github"
-title = "GitHub"
-url = "https://github.com/jjasser"
+[[menu.main]]
+name = "Home"
+pageRef = "/"
+weight = 100
 
+[[menu.main]]
+name = "Writing"
+pageRef = "/post"
+weight = 200
 
-[menu]
-
-  [[menu.main]]
-  name = "HOME"
-  identifier = "home"
-  weight = 100
-  url = "/"
-
-  [[menu.main]]
-  name = "POSTS"
-  weight = 200
-  identifier = "posts"
-  url = "/post/"
-
-  [[menu.main]]
-  name = "ABOUT"
-  weight = 300
-  identifier = "about"
-  url = "/about/"
-
-  [[menu.main]]
-  name = "CERTIFICATIONS"
-  weight = 400
-  identifier = "certifications"
-  url = "/certifications/"
-
+[[menu.main]]
+name = "About"
+pageRef = "/about"
+weight = 300

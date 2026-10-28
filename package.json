@@ -1,0 +1,10 @@
+{
+  "name": "jacob-jasser-blog",
+  "private": true,
+  "scripts": {
+    "test:site": "node scripts/verify-atlas.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
