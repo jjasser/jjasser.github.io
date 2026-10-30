@@ -1,0 +1,3 @@
+# Local comparison controls. Use alongside hugo.toml; never needed for production.
+[params]
+typographyPreview = true

@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ if .Site.Params.typographyPreview }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ $previewStyle := resources.Get "css/typography-preview.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $previewStyle.RelPermalink }}">
+  {{ $previewScript := resources.Get "js/typography-preview.js" | minify | fingerprint }}
+  <script src="{{ $previewScript.RelPermalink }}"></script>
+  {{ end }}
   {{ $description := .Description | default .Site.Params.description }}
   {{ $title := .Site.Title }}{{ if not .IsHome }}{{ $title = printf "%s · %s" .Title .Site.Title }}{{ end }}
   <title>{{ $title }}</title>
@@ -23,9 +30,12 @@
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
   {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}" crossorigin="anonymous">
+  {{ $readability := resources.Get "css/readability.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $readability.RelPermalink }}" integrity="{{ $readability.Data.Integrity }}" crossorigin="anonymous">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  {{ if .Site.Params.typographyPreview }}{{ partial "typography-preview.html" . }}{{ end }}
   <div class="site-shell">
     <header class="site-header">
       <a class="identity" href="{{ "/" | relURL }}" aria-label="Jacob Jasser home"><span class="monogram" aria-hidden="true">JJ<span>.</span></span><span class="identity-name">Jacob Jasser<span>AI SECURITY ENGINEER</span></span></a>

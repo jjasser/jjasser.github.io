@@ -14,6 +14,14 @@ Open http://localhost:1314/ in a browser on this computer. The destination keeps
 
 ## Verify the site
 
+### Compare typography locally
+
+Run `hugo server --config hugo.toml,typography-preview.toml --bind 127.0.0.1 --port 1316 --baseURL http://localhost:1316/ --disableFastRender --destination "$env:TEMP\jasser-readability-options"` from PowerShell.
+
+Open http://localhost:1316/. The comparison panel offers Subtle, Balanced, and Generous sizing with Deep slate, Charcoal, and Ink secondary text. Choices persist across page links and can be shared through the URL. Balanced + Ink is the approved default in `themes/atlas/assets/css/readability.css`. The controls load only with the extra preview configuration; the normal build remains JavaScript-free.
+
+With the preview server running and the same Playwright environment below, run `node scripts/verify-typography.cjs` for the typography, responsive layout, navigation, and command-preservation checks. Results and screenshots are saved under `validation/typography/`.
+
 Requires Node.js, Hugo 0.159.0, and Playwright:
 
 ```powershell
