@@ -1,6 +1,13 @@
 {{ $p := .post }}{{ $art := $p.Params.art | default (mod .index 3) }}
 <article class="post-card">
-  <a class="post-art art-{{ $art }}" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true"><span class="art-overline">{{ if eq $art 3 }}INDIRECT PROMPT INJECTION{{ else if eq $art 0 }}TRUST BOUNDARIES{{ else if eq $art 1 }}A DIFFERENT ATTACK SURFACE{{ else }}PROMPTS UNDER PRESSURE{{ end }}</span><div class="art-graphic">{{ if eq $art 3 }}<svg class="injection-art" viewBox="0 0 280 94" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <a class="post-art art-{{ $art }}" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true"><span class="art-overline">{{ if eq $art 4 }}AGENT MEMORY / SHARED STATE{{ else if eq $art 3 }}INDIRECT PROMPT INJECTION{{ else if eq $art 0 }}TRUST BOUNDARIES{{ else if eq $art 1 }}A DIFFERENT ATTACK SURFACE{{ else }}PROMPTS UNDER PRESSURE{{ end }}</span><div class="art-graphic">{{ if eq $art 4 }}<svg class="memory-art" viewBox="0 0 280 94" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <g class="memory-store"><ellipse cx="140" cy="23" rx="40" ry="11"/><path d="M100 23v39c0 6 18 11 40 11s40-5 40-11V23"/><path d="M100 42c0 6 18 11 40 11s40-5 40-11"/></g>
+  <path class="memory-links" d="M94 46H59m127 0h35"/><path class="memory-arrows" d="m88 41 6 5-6 5m127-10 6 5-6 5"/>
+  <circle class="memory-person" cx="42" cy="46" r="15"/><circle class="memory-person" cx="238" cy="46" r="15"/>
+  <text class="memory-icon" x="42" y="51">A</text><text class="memory-icon" x="238" y="51">B</text>
+  <text class="memory-key" x="140" y="48">?</text>
+  <text class="memory-label" x="42" y="80">WRITE</text><text class="memory-label" x="238" y="80">RETRIEVE</text>
+</svg>{{ else if eq $art 3 }}<svg class="injection-art" viewBox="0 0 280 94" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
   <g class="injection-files">
     <path d="M14 20h19l8 8v33H14z"/><path d="M33 20v8h8"/>
     <path d="M48 20h19l8 8v33H48z"/><path d="M67 20v8h8"/>
