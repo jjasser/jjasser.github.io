@@ -32,9 +32,11 @@
   <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}" crossorigin="anonymous">
   {{ $readability := resources.Get "css/readability.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $readability.RelPermalink }}" integrity="{{ $readability.Data.Integrity }}" crossorigin="anonymous">
+  {{ $dark := resources.Get "css/site-theme.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $dark.RelPermalink }}">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  {{ if .Site.Params.darkPreview }}{{ partial "dark-preview-bar.html" . }}{{ end }}
   {{ if .Site.Params.typographyPreview }}{{ partial "typography-preview.html" . }}{{ end }}
   <div class="site-shell">
     <header class="site-header">
@@ -46,10 +48,12 @@
           <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
         {{ end }}
       </nav>
+      <button class="theme-switch" type="button" aria-label="Toggle dark and light theme" aria-pressed="false">☾ Dark</button>
       <a class="header-contact" href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">Let's connect <span aria-hidden="true">↗</span></a>
     </header>
     <main id="main" tabindex="-1">{{ block "main" . }}{{ end }}</main>
     <footer class="site-footer"><span>© {{ now.Year }} Jacob Jasser</span><span>Always learning. Always questioning.</span><nav aria-label="Footer navigation"><a href="{{ "/about/#certifications" | relURL }}">Certifications</a><a href="{{ "/index.xml" | relURL }}">RSS</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></nav></footer>
   </div>
+  {{ $darkJs := resources.Get "js/site-theme.js" | minify | fingerprint }}<script src="{{ $darkJs.RelPermalink }}" defer></script>
 </body>
 </html>
