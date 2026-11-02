@@ -24,7 +24,22 @@ try {
         if ([string]::IsNullOrWhiteSpace([string]$job.message) -or @($job.paths).Count -eq 0) {
             throw 'Publish request needs a message and an array of source paths.'
         }
-        & $publish -Message ([string]$job.message) -Paths ($job.paths -join ',') | Out-Null
+        # A worker may restart after a successful push but before removing the
+        # request. Recognize the exact committed paths instead of re-staging a
+        # deleted file (such as AGENTS.md) and retrying forever.
+        & git -C $repo fetch origin main | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw 'Could not refresh origin/main before checking the request.' }
+        $head = (& git -C $repo rev-parse HEAD).Trim()
+        $origin = (& git -C $repo rev-parse origin/main).Trim()
+        $subject = (& git -C $repo log -1 --format=%s).Trim()
+        $committedPaths = @(& git -C $repo diff-tree --no-commit-id --name-only -r HEAD)
+        $alreadyPublished = $head -eq $origin -and $subject -eq [string]$job.message
+        foreach ($path in $job.paths) {
+            if ($path -notin $committedPaths) { $alreadyPublished = $false; break }
+        }
+        if (-not $alreadyPublished) {
+            & $publish -Message ([string]$job.message) -Paths ($job.paths -join ',') | Out-Null
+        }
     } else {
         & $publish -SyncOnly | Out-Null
     }
