@@ -47,6 +47,20 @@ try {
     $localCommit = (& git -C $repo rev-parse HEAD).Trim()
     $remoteCommit = (& git -C $repo rev-parse origin/main).Trim()
     if ($localCommit -ne $remoteCommit) { throw 'Local and origin/main commits differ after publishing.' }
+
+    # Hugo can rewrite tracked public files with different checkout line endings.
+    # Refresh Git's index only when the normalized blob is identical to HEAD.
+    # Real generated-page changes remain visible for review.
+    $generatedPaths = @(& git -C $repo ls-files -m -- public)
+    foreach ($path in $generatedPaths) {
+        $committedBlob = (& git -C $repo rev-parse "HEAD:$path").Trim()
+        $workingBlob = (& git -C $repo hash-object "--path=$path" -- $path).Trim()
+        if ($committedBlob -eq $workingBlob) {
+            & git -C $repo add -- $path | Out-Null
+            if ($LASTEXITCODE -ne 0) { throw "Could not refresh the index for $path." }
+        }
+    }
+
     $receipt = @{
         success = $true
         finishedAt = (Get-Date).ToString('o')
