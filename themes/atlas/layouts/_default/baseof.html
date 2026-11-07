@@ -40,7 +40,7 @@
   {{ if .Site.Params.typographyPreview }}{{ partial "typography-preview.html" . }}{{ end }}
   <div class="site-shell">
     <header class="site-header">
-      <a class="identity" href="{{ "/" | relURL }}" aria-label="Jacob Jasser home"><span class="monogram" aria-hidden="true">JJ<span>.</span></span><span class="identity-name">Jacob Jasser<span>AI SECURITY ENGINEER</span></span></a>
+      <a class="identity" href="{{ "/" | relURL }}" aria-label="Jacob Jasser home"><span class="identity-name">Jacob Jasser<span>AI SECURITY + CLOUD SECURITY ENGINEER</span></span></a>
       <nav aria-label="Main navigation">
         {{ range .Site.Menus.main }}
           {{ $active := $.IsMenuCurrent "main" . }}
@@ -52,7 +52,7 @@
       <a class="header-contact" href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">Let's connect <span aria-hidden="true">↗</span></a>
     </header>
     <main id="main" tabindex="-1">{{ block "main" . }}{{ end }}</main>
-    <footer class="site-footer"><span>© {{ now.Year }} Jacob Jasser</span><span>Always learning. Always questioning.</span><nav aria-label="Footer navigation"><a href="{{ "/about/#certifications" | relURL }}">Certifications</a><a href="{{ "/index.xml" | relURL }}">RSS</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></nav></footer>
+    <footer class="site-footer"><span>© {{ now.Year }} Jacob Jasser</span><nav aria-label="Footer navigation"><a href="{{ "/about/#certifications" | relURL }}">Certifications</a><a href="{{ "/index.xml" | relURL }}">RSS</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></nav></footer>
   </div>
   {{ $darkJs := resources.Get "js/site-theme.js" | minify | fingerprint }}<script src="{{ $darkJs.RelPermalink }}" defer></script>
 </body>

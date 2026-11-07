@@ -1,10 +1,25 @@
 {{ define "main" }}
-<article class="about-page">
-  <header class="about-heading">
-    <div><p class="eyebrow">THE PERSON BEHIND THE NOTES</p><h1>I'm Jacob<span>.</span></h1><p class="about-role">AI Security Engineer</p></div>
-    <img src="{{ .Site.Params.profilePicture | relURL }}" alt="Jacob Jasser" width="180" height="180">
-    {{ partial "focus-topics.html" . }}
+<article class="about-story">
+  <header class="about-story-hero">
+    <div><p class="eyebrow">THE PERSON BEHIND THE NOTES</p><h1 aria-label="I'm Jacob.">I'm Jacob<span class="about-block-cursor" aria-hidden="true"></span></h1><p class="about-story-role">An AI Security Engineer with a background in cloud security engineering and security architecture.</p><p class="about-story-intro">I take a holistic approach to AI security, working across LLMs, RAG pipelines, agentic systems, and the infrastructure and services that support them. I embed myself across these layers to understand how systems are built, where security risks emerge, and how layered protections can address them.</p></div>
+    <img src="{{ .Site.Params.profilePicture | relURL }}" alt="Jacob Jasser" width="360" height="360">
   </header>
-  <div class="prose">{{ .Content }}</div>
+  <section class="about-story-section" aria-labelledby="about-work"><div class="about-story-heading"><span>01 / FOCUS</span><h2 id="about-work">What I work on</h2></div><div class="about-story-work">
+    <article><h3>AI Application &amp; Agent Security</h3><ul><li>Threat-model LLM, RAG, and agent workflows</li><li>Map trust boundaries across retrieval, memory, tools, and APIs</li><li>Assess prompt injection, data exposure, and unsafe tool use</li><li>Turn findings into scoped controls and retest criteria</li></ul></article>
+    <article><h3>Cloud Security &amp; Automation</h3><ul><li>Build event-driven remediation for cloud misconfigurations</li><li>Automate infrastructure and dependency checks in CI</li><li>Use policy-as-code to catch risky changes earlier</li><li>Scan container images and Kubernetes manifests in CI for vulnerabilities and misconfigurations.</li></ul></article>
+  </div></section>
+  <section class="about-story-section" id="certifications" aria-labelledby="about-certs"><div class="about-story-heading"><span>02 / CREDENTIALS</span><h2 id="about-certs">Certifications</h2></div><div class="about-story-certs">
+    <div><strong>OSAI · Advanced AI Red Teaming</strong><span>OffSec · In progress</span><img src="{{ "images/certifications/osai.png" | relURL }}" alt="OffSec OSAI badge artwork" loading="lazy" width="82" height="82"></div>
+    <div><strong>GCPN · Cloud Penetration Tester</strong><span>GIAC / SANS Institute</span><img src="{{ "images/certifications/gcpn.webp" | relURL }}" alt="GIAC GCPN emblem" loading="lazy" width="82" height="82"></div>
+    <div><strong>GRTP · Red Team Professional</strong><span>GIAC / SANS Institute</span><img src="{{ "images/certifications/grtp.webp" | relURL }}" alt="GIAC GRTP emblem" loading="lazy" width="82" height="82"></div>
+    <div><strong>External Pentest Playbook</strong><span>TCM Security</span><img src="{{ "images/certifications/external-pentest.png" | relURL }}" alt="TCM External Pentest Playbook course artwork" loading="lazy" width="82" height="82"></div>
+    <div><strong>OSINT Fundamentals</strong><span>TCM Security</span><img src="{{ "images/certifications/osint.png" | relURL }}" alt="TCM OSINT Fundamentals course artwork" loading="lazy" width="82" height="82"></div>
+  </div></section>
+  <section class="about-story-section" aria-labelledby="about-tools"><div class="about-story-heading"><span>03 / TOOLKIT</span><h2 id="about-tools">Tools I use</h2></div><div class="about-story-tools">
+    <article><h3>AI Testing &amp; Guardrails</h3><ul><li>NeMo Guardrails</li><li>Garak</li><li>Promptfoo</li><li>Strix.AI</li><li>DeepTeam</li></ul></article>
+    <article><h3>Cloud &amp; infrastructure</h3><ul><li>Google Cloud</li><li>AWS</li><li>Kubernetes</li><li>Containers</li><li>Terraform</li></ul></article>
+    <article><h3>Engineering &amp; Automation</h3><ul><li>Python</li><li>Bash</li><li>GitHub Actions</li><li>Trivy</li><li>TruffleHog</li></ul></article>
+  </div></section>
+  <section class="about-story-section" aria-labelledby="about-beyond"><div class="about-story-heading"><span>04 / OFFLINE</span><h2 id="about-beyond">Beyond security</h2></div><div class="about-story-personal"><p>I’m a husband and father, and outside of work I enjoy traveling with my family, going to local beaches (San Clemente, Laguna Beach, and Crystal Cove are my favorites), and exploring the outdoors.</p><p>I also enjoy trying new restaurants, going to farmers markets and taking care of my physical and mental health through exercise, meditation, and reading.</p></div></section>
 </article>
 {{ end }}
