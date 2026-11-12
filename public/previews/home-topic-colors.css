@@ -1,0 +1,15 @@
+.topic-palette-controls{position:sticky;top:0;z-index:1100;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:11px max(20px,calc((100vw - 1152px)/2));background:var(--surface);border-bottom:1px solid var(--line);font:12px var(--sans)}
+.topic-palette-controls strong{grid-column:1/-1;font:700 12px var(--sans)}
+.topic-palette-controls button{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:9px;font:700 11px var(--mono);cursor:pointer;text-align:left}
+.topic-palette-controls button:before{content:'';flex:none;width:14px;height:14px;background:var(--swatch);border:1px solid #0002}
+.topic-palette-controls button[aria-pressed=true]{border-color:var(--swatch);box-shadow:inset 0 0 0 1px var(--swatch)}
+.topic-palette-controls button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+html:not([data-dark-palette]) body[data-topic-palette=emerald] .home-topics{--topic-strong:#006b45;--topic-medium:#c2e3cf;--topic-low:#e9f4e9;--topic-highlight:#006b45}
+html:not([data-dark-palette]) body[data-topic-palette=moss] .home-topics{--topic-strong:#596b2e;--topic-medium:#dbe5b9;--topic-low:#f0f3dd;--topic-highlight:#596b2e}
+html:not([data-dark-palette]) body[data-topic-palette=teal] .home-topics{--topic-strong:#096c72;--topic-medium:#bfe4e1;--topic-low:#e4f4f1;--topic-highlight:#096c72}
+html:not([data-dark-palette]) body[data-topic-palette=blue] .home-topics{--topic-strong:#28567f;--topic-medium:#c8dcea;--topic-low:#e9f1f8;--topic-highlight:#28567f}
+html:not([data-dark-palette]) body[data-topic-palette=terracotta] .home-topics{--topic-strong:#96503c;--topic-medium:#eed2c4;--topic-low:#f8ebe5;--topic-highlight:#96503c}
+html:not([data-dark-palette]) body[data-topic-palette] .home-topic[data-density=high]{color:#fff}
+.topic-palette-controls [data-topic-option=emerald]{--swatch:#006b45}.topic-palette-controls [data-topic-option=moss]{--swatch:#596b2e}.topic-palette-controls [data-topic-option=teal]{--swatch:#096c72}.topic-palette-controls [data-topic-option=blue]{--swatch:#28567f}.topic-palette-controls [data-topic-option=terracotta]{--swatch:#96503c}
+@media(max-width:750px){.topic-palette-controls{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:500px){.topic-palette-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-palette-controls button{font-size:10px}}

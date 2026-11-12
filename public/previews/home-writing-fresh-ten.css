@@ -1,0 +1,43 @@
+.fresh-ten-controls{position:sticky;top:0;z-index:1100;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:10px max(20px,calc((100vw - 1152px)/2));background:var(--surface);border-bottom:1px solid var(--line);font:12px var(--sans)}
+.fresh-ten-controls strong{grid-column:1/-1}.fresh-ten-controls button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 9px;font:11px var(--sans);cursor:pointer;text-align:left}.fresh-ten-controls button[aria-pressed=true]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.site-header nav{flex-wrap:wrap}
+.fresh-ten-layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:27px;align-items:start}
+.fresh-ten-layout .post-grid{min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.fresh-ten-rail{border-top:3px solid var(--accent);padding-top:16px;min-width:0}.fresh-ten-rail>span{display:block;color:var(--accent);font:10px var(--mono);letter-spacing:.08em;margin-bottom:8px}.fresh-ten-rail h3{font:600 23px/1.2 var(--heading);margin:0 0 16px}.fresh-ten-rail a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;color:var(--ink);font:13px/1.4 var(--sans)}.fresh-ten-rail a:hover{color:var(--accent)}.fresh-ten-rail a span{color:var(--muted);font:11px var(--mono)}
+.shelf-heading{display:none}
+
+/* 01: one large cover introduces the sequence. */
+body.next-cover .post-card:first-of-type{grid-column:1/-1;background:var(--surface);padding:18px;border:1px solid var(--line)}
+body.next-cover .post-card:first-of-type .post-art{height:290px}body.next-cover .post-card:first-of-type .card-copy{max-width:760px;padding:20px 5px 4px}body.next-cover .post-card:first-of-type h3{font-size:36px}
+
+/* 02: ruled notebook entries with round visual stamps. */
+body.next-notebook .post-grid{grid-template-columns:1fr;gap:14px}body.next-notebook .post-card{display:grid;grid-template-columns:112px minmax(0,1fr);gap:22px;padding:17px 20px;border-left:4px solid var(--accent);background:repeating-linear-gradient(to bottom,transparent 0 36px,var(--line) 37px 38px)}body.next-notebook .post-art{width:108px;height:108px;border-radius:50%;overflow:hidden}body.next-notebook .post-card h3{font-size:26px}body.next-notebook .card-copy{background:var(--paper);padding:8px 12px}
+
+/* 03: artwork as the dominant gallery element. */
+body.next-gallery .post-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 15px}body.next-gallery .post-art{height:250px}body.next-gallery .post-card h3{font-size:20px}body.next-gallery .post-card .card-copy>p{font-size:11px}body.next-gallery .post-card:first-of-type{grid-column:span 2}body.next-gallery .post-card:first-of-type .post-art{height:330px}body.next-gallery .post-card:first-of-type h3{font-size:29px}
+
+/* 04: full-width story bands alternate the artwork side. */
+body.next-bands .post-grid{grid-template-columns:1fr;gap:16px}body.next-bands .post-card{display:grid;grid-template-columns:38% minmax(0,1fr);background:var(--surface);border-top:3px solid var(--accent);padding:17px;gap:22px}body.next-bands .post-art{height:220px}body.next-bands .card-copy{align-self:center}body.next-bands .post-card:nth-of-type(even){grid-template-columns:minmax(0,1fr) 38%}body.next-bands .post-card:nth-of-type(even) .post-art{order:2}
+
+/* 05: each article is a compact terminal session. */
+body.next-terminal .fresh-ten-rail{background:#17231e;color:#f0f5ee;padding:17px;border:1px solid #3f654e}body.next-terminal .fresh-ten-rail h3,body.next-terminal .fresh-ten-rail a{color:#f0f5ee}body.next-terminal .fresh-ten-rail a{border-color:#3f654e}body.next-terminal .fresh-ten-rail a span{color:#b9d0bc}
+body.next-terminal .post-grid{grid-template-columns:1fr;gap:12px}body.next-terminal .post-card{background:#111a16;color:#eff5ed;border:1px solid #3f654e;padding:20px 23px}body.next-terminal .post-card:before{content:'> field_note_' attr(data-index);display:block;color:#a6df9c;font:12px var(--mono);margin-bottom:14px}body.next-terminal .post-art{display:none}body.next-terminal .post-card h3{font:700 22px/1.35 var(--mono)}body.next-terminal .post-card .card-copy>p,body.next-terminal .card-bottom,body.next-terminal .card-bottom time,body.next-terminal .post-meta>span:last-child{color:#c2d0c3}body.next-terminal .post-meta{color:#a6df9c}body.next-terminal .card-bottom{border-color:#3f654e}
+
+/* 06: asymmetric bento tiles. */
+body.next-bento .post-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}body.next-bento .post-card{background:var(--surface);border:1px solid var(--line);padding:13px}body.next-bento .post-card:first-of-type{grid-column:span 2;grid-row:span 2}body.next-bento .post-card:first-of-type .post-art{height:310px}body.next-bento .post-card:first-of-type h3{font-size:29px}body.next-bento .post-card:not(:first-of-type) .post-art{height:122px}body.next-bento .post-card:not(:first-of-type) h3{font-size:18px}
+
+/* 07: a horizontal filmstrip with scroll snapping. */
+body.next-filmstrip .post-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 24px}body.next-filmstrip .post-card{flex:0 0 315px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);padding:13px}body.next-filmstrip .post-art{height:220px}body.next-filmstrip .post-card h3{font-size:23px}body.next-filmstrip .section-heading:after{content:'SCROLL TO EXPLORE →';font:11px var(--mono);color:var(--accent)}
+
+/* 08: newspaper typography, small illustrations, strong rules. */
+body.next-newspaper .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 25px}body.next-newspaper .post-card{border-top:3px double var(--ink);padding-top:18px}body.next-newspaper .post-card:first-of-type{grid-column:1/-1}body.next-newspaper .post-card:first-of-type h3{font-size:43px;max-width:720px}body.next-newspaper .post-art{float:right;width:130px;height:100px;margin:0 0 12px 16px}body.next-newspaper .post-card:first-of-type .post-art{width:225px;height:160px}body.next-newspaper .post-card .card-copy>p{font-size:13px}
+
+/* 09: dossier files with visible case tabs. */
+body.next-dossiers .post-grid{grid-template-columns:1fr;gap:21px}body.next-dossiers .post-card{position:relative;display:grid;grid-template-columns:175px minmax(0,1fr);gap:22px;background:var(--surface);border:1px solid var(--line);padding:27px 20px 18px}body.next-dossiers .post-card:before{content:'CASE ' attr(data-index);position:absolute;left:0;top:0;transform:translateY(-50%);background:var(--accent);color:var(--paper);padding:5px 11px;font:10px var(--mono)}body.next-dossiers .post-card:nth-of-type(even){margin-left:25px}body.next-dossiers .post-art{height:145px}body.next-dossiers .post-card h3{margin-top:7px}
+
+/* 10: tag-led shelves place agent work above foundational notes. */
+body.next-shelves .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 18px}body.next-shelves .shelf-heading{display:block;grid-column:1/-1;border-bottom:2px solid var(--accent);padding:13px 0 8px;color:var(--ink);font:700 13px var(--mono);letter-spacing:.06em}body.next-shelves .post-card{background:var(--surface);padding:14px;border:1px solid var(--line)}body.next-shelves .post-art{height:145px}body.next-shelves .post-card h3{font-size:21px}
+
+@media(max-width:1000px){.fresh-ten-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.fresh-ten-layout{grid-template-columns:150px minmax(0,1fr);gap:17px}body.next-gallery .post-grid,body.next-bento .post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.fresh-ten-layout{display:block}.fresh-ten-rail{margin-bottom:28px}.fresh-ten-rail nav{display:flex;flex-wrap:wrap;gap:7px}.fresh-ten-rail a{border:1px solid var(--line);padding:7px 9px;gap:8px}body.next-terminal .fresh-ten-rail a{border-color:#3f654e}}
+@media(max-width:560px){.fresh-ten-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.fresh-ten-layout .post-grid,body.next-gallery .post-grid,body.next-bento .post-grid,body.next-shelves .post-grid{grid-template-columns:1fr}body.next-cover .post-card:first-of-type,body.next-gallery .post-card:first-of-type,body.next-bento .post-card:first-of-type{grid-column:auto;grid-row:auto}body.next-notebook .post-card,body.next-bands .post-card,body.next-bands .post-card:nth-of-type(even),body.next-dossiers .post-card{display:block}body.next-bands .post-card:nth-of-type(even) .post-art{order:0}body.next-notebook .post-art{margin-bottom:14px}body.next-bands .post-art,body.next-dossiers .post-art{height:170px;margin-bottom:14px}body.next-dossiers .post-card:nth-of-type(even){margin-left:0}body.next-newspaper .post-card:first-of-type h3{font-size:31px}body.next-filmstrip .post-card{flex-basis:82vw}}

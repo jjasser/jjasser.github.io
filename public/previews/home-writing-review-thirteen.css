@@ -1,0 +1,248 @@
+.review-controls{position:sticky;top:0;z-index:1100;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:10px max(20px,calc((100vw - 1152px)/2));background:var(--surface);border-bottom:1px solid var(--line);font:12px var(--sans)}
+.review-controls strong{grid-column:1/-1;font:700 12px var(--sans)}
+.review-controls button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:9px 10px;font:11px var(--sans);cursor:pointer;text-align:left;min-height:37px}
+.review-controls button[aria-pressed=true]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--paper))}
+.review-controls button:hover{border-color:var(--accent)}
+.site-header nav{flex-wrap:wrap}
+.review-layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:27px;align-items:start}
+.review-layout .post-grid{min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.review-tags{border-top:3px solid var(--accent);padding-top:16px;min-width:0}
+.review-tags>span{display:block;color:var(--accent);font:10px var(--mono);letter-spacing:.08em;margin-bottom:8px}
+.review-tags h3{font:600 23px/1.2 var(--heading);margin:0 0 16px}
+.review-tags a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;color:var(--ink);font:13px/1.4 var(--sans)}
+.review-tags a:hover{color:var(--accent)}
+.review-tags a span{color:var(--muted);font:11px var(--mono)}
+.accordion-toggle{display:none}
+
+/* The three layouts selected for further review. */
+body.review-tickets .post-grid{grid-template-columns:1fr;gap:17px}
+body.review-tickets .post-card{position:relative;display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px;background:var(--surface);border:1px dashed var(--accent);padding:16px}
+body.review-tickets .post-card:before{content:'FIELD PASS ' attr(data-index);position:absolute;right:16px;top:8px;color:var(--accent);font:10px var(--mono)}
+body.review-tickets .post-card:after{content:'';position:absolute;left:260px;top:0;bottom:0;border-left:2px dashed var(--line)}
+body.review-tickets .post-art{height:170px}
+body.review-tickets .card-copy{padding:12px 8px}
+body.review-tickets .post-card h3{font-size:25px}
+
+body.review-index .post-grid{grid-template-columns:1fr;gap:0}
+body.review-index .post-card{display:grid;grid-template-columns:74px minmax(0,1fr) 145px;gap:15px;align-items:start;border-bottom:2px solid var(--line);padding:20px 0}
+body.review-index .post-card:before{content:attr(data-index);font:400 45px/.9 var(--heading);color:var(--accent)}
+body.review-index .post-art{grid-column:3;grid-row:1;width:100%;height:100px}
+body.review-index .card-copy{grid-column:2;grid-row:1}
+body.review-index .post-card h3{font-size:29px;margin-top:7px}
+body.review-index .post-card .card-copy>p{font-size:13px}
+
+body.review-accordion .post-grid{grid-template-columns:1fr;gap:9px}
+body.review-accordion .post-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:18px 20px}
+body.review-accordion .post-art{display:none}
+body.review-accordion .post-card h3{font-size:24px}
+body.review-accordion .accordion-toggle{display:block;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 11px;cursor:pointer;font:11px var(--mono)}
+body.review-accordion .post-card:not([data-open=true]) .card-copy>p,body.review-accordion .post-card:not([data-open=true]) .card-bottom{display:none}
+
+/* 04: one roomy feature opens a tightly edited two-column article index. */
+body.review-editorial .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 30px}
+body.review-editorial .post-card:first-of-type{grid-column:1/-1;display:grid;grid-template-columns:1.08fr .92fr;gap:25px;background:var(--surface);border:1px solid var(--line);padding:18px}
+body.review-editorial .post-card:first-of-type .post-art{height:295px}
+body.review-editorial .post-card:first-of-type .card-copy{align-self:center}
+body.review-editorial .post-card:first-of-type h3{font-size:32px}
+body.review-editorial .post-card:not(:first-of-type){border-top:3px solid var(--accent);padding-top:13px}
+body.review-editorial .post-card:not(:first-of-type) .post-art{height:110px;margin-bottom:13px}
+body.review-editorial .post-card:not(:first-of-type) h3{font-size:22px}
+
+/* 05: a margin and reading column evoke handwritten editorial notes. */
+body.review-margins .post-grid{grid-template-columns:1fr;gap:0;border-left:1px solid var(--accent);margin-left:28px}
+body.review-margins .post-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:25px;padding:24px 0 24px 28px;border-bottom:1px solid var(--line)}
+body.review-margins .post-card:before{content:attr(data-index);position:absolute;left:-28px;top:25px;transform:translateX(-50%);min-width:40px;text-align:center;background:var(--paper);color:var(--accent);font:700 13px var(--mono)}
+body.review-margins .card-copy{grid-column:1;grid-row:1}
+body.review-margins .post-art{grid-column:2;grid-row:1;height:125px}
+body.review-margins .post-card h3{font-size:28px}
+body.review-margins .card-bottom{max-width:520px}
+
+/* 06: a gallery wall gives the article illustrations the first read. */
+body.review-gallery .post-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 15px}
+body.review-gallery .post-card{background:var(--surface);border:1px solid var(--line);padding:10px;display:flex;flex-direction:column}
+body.review-gallery .post-card:nth-of-type(1),body.review-gallery .post-card:nth-of-type(2){grid-column:span 3;display:grid;grid-template-columns:1.12fr .88fr;gap:22px;padding:15px}
+body.review-gallery .post-card:nth-of-type(2) .post-art{grid-column:2;grid-row:1}
+body.review-gallery .post-card:nth-of-type(2) .card-copy{grid-column:1;grid-row:1}
+body.review-gallery .post-card:nth-of-type(-n+2) .post-art{height:260px}
+body.review-gallery .post-card:nth-of-type(n+3) .post-art{height:145px}
+body.review-gallery .post-card:nth-of-type(n+3) h3{font-size:19px}
+body.review-gallery .card-copy{padding:8px 5px}
+body.review-gallery .post-card:nth-of-type(-n+2) .card-copy{align-self:center}
+
+/* 07: structured ledger with crisp columns and generous line spacing. */
+body.review-ledger .post-grid{grid-template-columns:1fr;gap:0;border-top:2px solid var(--ink)}
+body.review-ledger .post-card{display:grid;grid-template-columns:85px minmax(0,1fr) 135px;gap:20px;padding:22px 8px;border-bottom:1px solid var(--line);align-items:start}
+body.review-ledger .post-card:nth-of-type(odd){background:color-mix(in srgb,var(--surface) 60%,var(--paper))}
+body.review-ledger .post-card:before{content:'NO. ' attr(data-index);color:var(--accent);font:11px var(--mono);padding-top:7px}
+body.review-ledger .card-copy{grid-column:2;grid-row:1}
+body.review-ledger .post-art{grid-column:3;grid-row:1;height:105px}
+body.review-ledger .post-card h3{font-size:24px}
+body.review-ledger .card-bottom{border:0;padding-top:7px}
+
+/* 08: offset panels make each dispatch feel like a separate page. */
+body.review-stack .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;padding:0 10px 12px 0}
+body.review-stack .post-card{position:relative;background:var(--surface);border:1px solid var(--line);padding:15px;box-shadow:7px 7px 0 color-mix(in srgb,var(--accent) 28%,var(--paper))}
+body.review-stack .post-card:first-of-type{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+body.review-stack .post-card:first-of-type .post-art{height:250px}
+body.review-stack .post-card:first-of-type .card-copy{align-self:center}
+body.review-stack .post-card:first-of-type h3{font-size:31px}
+body.review-stack .post-card:not(:first-of-type) .post-art{height:140px}
+body.review-stack .post-card h3{font-size:23px}
+
+/* 09: a feature story followed by calm one-line briefs. */
+body.review-feature .post-grid{grid-template-columns:1fr;gap:0}
+body.review-feature .post-card:first-of-type{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding:20px;background:var(--surface);border:1px solid var(--line);margin-bottom:12px}
+body.review-feature .post-card:first-of-type .post-art{height:325px}
+body.review-feature .post-card:first-of-type .card-copy{align-self:center}
+body.review-feature .post-card:first-of-type h3{font-size:34px}
+body.review-feature .post-card:not(:first-of-type){display:grid;grid-template-columns:110px minmax(0,1fr);gap:17px;align-items:start;padding:17px 0;border-bottom:1px solid var(--line)}
+body.review-feature .post-card:not(:first-of-type) .post-art{height:82px}
+body.review-feature .post-card:not(:first-of-type) h3{font-size:22px}
+body.review-feature .post-card:not(:first-of-type) .card-copy>p{display:none}
+
+/* 10: alternating image and copy panels create a measured visual rhythm. */
+body.review-diagonal .post-grid{grid-template-columns:1fr;gap:16px}
+body.review-diagonal .post-card{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:17px}
+body.review-diagonal .post-card:nth-of-type(even) .post-art{grid-column:2;grid-row:1}
+body.review-diagonal .post-card:nth-of-type(even) .card-copy{grid-column:1;grid-row:1}
+body.review-diagonal .post-art{height:205px}
+body.review-diagonal .post-card h3{font-size:28px}
+
+/* 11: dates anchor a quiet chronological trail. */
+body.review-timeline .post-grid{grid-template-columns:1fr;gap:0;padding-left:34px;border-left:2px solid var(--line)}
+body.review-timeline .post-card{position:relative;display:grid;grid-template-columns:145px minmax(0,1fr);gap:22px;padding:0 0 31px;margin-bottom:25px;border-bottom:1px solid var(--line)}
+body.review-timeline .post-card:before{content:'';position:absolute;left:-42px;top:10px;width:14px;height:14px;border:2px solid var(--accent);border-radius:50%;background:var(--paper)}
+body.review-timeline .post-card:after{content:attr(data-date);position:absolute;left:167px;top:0;color:var(--accent);font:11px var(--mono)}
+body.review-timeline .post-art{height:125px}
+body.review-timeline .card-copy{padding-top:17px}
+body.review-timeline .post-card h3{font-size:26px}
+body.review-timeline .card-bottom time{display:none}
+
+/* 12: each article reads as a numbered chapter folio. */
+body.review-chapters .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.review-chapters .post-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);padding:15px 17px;min-height:340px}
+body.review-chapters .post-card:before{content:'CHAPTER / ' attr(data-index);display:block;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid var(--line);color:var(--accent);font:700 11px var(--mono)}
+body.review-chapters .post-art{height:115px;margin-bottom:14px}
+body.review-chapters .card-copy{display:flex;flex-direction:column;flex:1}
+body.review-chapters .post-card h3{font-size:23px}
+body.review-chapters .card-bottom{margin-top:auto}
+body.review-chapters .post-card:first-of-type{grid-column:1/-1;min-height:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+body.review-chapters .post-card:first-of-type:before{grid-column:1/-1;margin:0}
+body.review-chapters .post-card:first-of-type .post-art{height:250px;margin:0}
+body.review-chapters .post-card:first-of-type .card-copy{align-self:center}
+body.review-chapters .post-card:first-of-type h3{font-size:31px}
+
+/* 13: an intimate night desk, independent of the surrounding page theme. */
+body.review-library .writing-section{--paper:#10251e;--ink:#f3f5ec;--muted:#b6c9ba;--line:#526d5d;--accent:#ccf475;--surface:#1b352a;background:var(--paper);color:var(--ink);padding:36px 24px}
+body.review-library .review-tags a{color:var(--ink)}
+body.review-library .post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+body.review-library .post-card{background:var(--surface);border:1px solid var(--line);padding:17px}
+body.review-library .post-card:first-of-type{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:23px}
+body.review-library .post-card:first-of-type .post-art{height:250px}
+body.review-library .post-card:first-of-type .card-copy{align-self:center}
+body.review-library .post-card:first-of-type h3{font-size:31px}
+body.review-library .post-card:not(:first-of-type) .post-art{height:135px}
+body.review-library .post-art{--accent:#245d49;--line:#aac5b3;background:#e8eee8;color:#245d49}
+body.review-library .post-card h3{font-size:22px}
+body.review-library .post-card .card-copy>p,body.review-library .card-bottom time,body.review-library .post-meta>span:last-child{color:var(--muted)}
+
+@media(max-width:1000px){.review-controls{grid-template-columns:repeat(4,minmax(0,1fr))}.review-layout{grid-template-columns:150px minmax(0,1fr);gap:18px}body.review-gallery .post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.review-gallery .post-card:nth-of-type(-n+2){grid-column:span 2}}
+@media(max-width:750px){.review-layout{display:block}.review-tags{margin-bottom:26px}.review-tags nav{display:flex;flex-wrap:wrap;gap:7px}.review-tags a{border:1px solid var(--line);padding:7px 9px;gap:8px}.review-controls{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.review-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.review-layout .post-grid,body.review-gallery .post-grid,body.review-chapters .post-grid,body.review-library .post-grid{grid-template-columns:1fr}.review-layout .post-card,body.review-editorial .post-card:first-of-type,body.review-gallery .post-card:nth-of-type(-n+2),body.review-stack .post-card:first-of-type,body.review-feature .post-card:first-of-type,body.review-diagonal .post-card,body.review-chapters .post-card:first-of-type,body.review-library .post-card:first-of-type{display:block;grid-column:auto}.review-layout .post-art,body.review-editorial .post-card:first-of-type .post-art,body.review-gallery .post-card:nth-of-type(-n+2) .post-art,body.review-stack .post-card:first-of-type .post-art,body.review-feature .post-card:first-of-type .post-art,body.review-diagonal .post-art,body.review-chapters .post-card:first-of-type .post-art,body.review-library .post-card:first-of-type .post-art{height:170px;margin-bottom:14px}.review-tickets .post-card:after{display:none}body.review-index .post-card:before,body.review-ledger .post-card:before{display:block;margin-bottom:10px}body.review-timeline .post-card:after{position:static;display:block;margin-bottom:9px}body.review-timeline .post-card:before{left:-42px}body.review-accordion .post-card{display:grid;grid-template-columns:minmax(0,1fr) auto}body.review-accordion .post-card h3{font-size:20px}body.review-gallery .post-card:nth-of-type(2) .post-art,body.review-gallery .post-card:nth-of-type(2) .card-copy,body.review-diagonal .post-card:nth-of-type(even) .post-art,body.review-diagonal .post-card:nth-of-type(even) .card-copy{grid-column:auto;grid-row:auto}}
+
+/* A separate tag treatment accompanies every writing layout. */
+body.review-tickets .review-tags{border:1px dashed var(--accent);background:var(--surface);padding:13px;position:relative}
+body.review-tickets .review-tags:before,body.review-tickets .review-tags:after{content:'';position:absolute;right:-7px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:1px dashed var(--accent)}
+body.review-tickets .review-tags:before{top:40%}body.review-tickets .review-tags:after{top:70%}
+body.review-tickets .review-tags h3{font:700 19px var(--mono);text-transform:uppercase;border-bottom:2px dashed var(--line);padding-bottom:13px}
+body.review-tickets .review-tags a{border-bottom:1px dashed var(--line);font-family:var(--mono);font-size:11px}
+body.review-tickets .review-tags a span{background:var(--accent);color:var(--paper);padding:2px 5px}
+
+body.review-index .review-tags{border:0;padding:0}
+body.review-index .review-tags h3{font-size:30px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+body.review-index .review-tags nav{counter-reset:tagIndex}
+body.review-index .review-tags a{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:4px;align-items:center;border:0;padding:11px 0;font:13px var(--sans)}
+body.review-index .review-tags a:not(:last-child):before{counter-increment:tagIndex;content:counter(tagIndex,decimal-leading-zero);color:var(--accent);font:11px var(--mono)}
+body.review-index .review-tags a:last-child{display:block;border-top:1px solid var(--line);margin-top:5px;white-space:nowrap}
+
+body.review-accordion .review-tags{border:0;background:var(--surface);padding:17px}
+body.review-accordion .review-tags h3{margin-bottom:11px}
+body.review-accordion .review-tags nav{display:grid;gap:6px}
+body.review-accordion .review-tags a{position:relative;border:1px solid var(--line);padding:10px 10px 10px 26px;background:var(--paper);font:12px var(--sans)}
+body.review-accordion .review-tags a:before{content:'›';position:absolute;left:10px;color:var(--accent);font:700 17px/1 var(--sans)}
+body.review-accordion .review-tags a:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
+
+body.review-editorial .review-tags{border:0;padding-top:0}
+body.review-editorial .review-tags>span{border-bottom:1px solid var(--accent);padding-bottom:10px;margin-bottom:19px}
+body.review-editorial .review-tags h3{font:400 31px/1 var(--heading);margin-bottom:17px}
+body.review-editorial .review-tags a{border:0;padding:6px 0;font:15px/1.35 var(--heading)}
+body.review-editorial .review-tags a span{font:700 16px var(--heading);color:var(--accent)}
+body.review-editorial .review-tags a:last-child{border-top:1px solid var(--line);margin-top:15px;padding-top:13px;font:12px var(--sans)}
+
+body.review-margins .review-tags{border-left:2px solid var(--accent);border-top:0;padding:2px 0 0 15px;background:repeating-linear-gradient(to bottom,transparent 0 31px,color-mix(in srgb,var(--line) 45%,transparent) 32px 33px)}
+body.review-margins .review-tags h3{font:400 italic 29px var(--heading)}
+body.review-margins .review-tags a{border:0;padding:10px 3px;font:13px var(--sans)}
+body.review-margins .review-tags a:hover{background:var(--surface)}
+body.review-margins .review-tags a span{border-bottom:1px solid var(--accent)}
+
+body.review-gallery .review-tags{border:0;padding:0}
+body.review-gallery .review-tags h3{font-size:27px;margin-bottom:11px}
+body.review-gallery .review-tags nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+body.review-gallery .review-tags a{display:flex;flex-direction:column;align-items:flex-start;min-height:72px;border:1px solid var(--line);padding:9px;background:var(--surface);font:12px/1.2 var(--sans)}
+body.review-gallery .review-tags a:nth-child(1){background:color-mix(in srgb,var(--accent) 16%,var(--surface))}
+body.review-gallery .review-tags a:nth-child(2){background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+body.review-gallery .review-tags a span{margin-top:auto;color:var(--accent)}
+body.review-gallery .review-tags a:last-child{grid-column:1/-1;min-height:36px;justify-content:center}
+
+body.review-ledger .review-tags{border:1px solid var(--line);padding:0;background:var(--surface)}
+body.review-ledger .review-tags>span{display:block;padding:11px 10px;margin:0;border-bottom:1px solid var(--line)}
+body.review-ledger .review-tags h3{font:700 17px var(--mono);padding:11px 10px;margin:0;background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+body.review-ledger .review-tags nav{counter-reset:tagLedger}
+body.review-ledger .review-tags a{display:grid;grid-template-columns:21px minmax(0,1fr) auto;gap:5px;border-top:1px solid var(--line);border-bottom:0;padding:10px;font:11px var(--mono)}
+body.review-ledger .review-tags a:not(:last-child):before{counter-increment:tagLedger;content:counter(tagLedger,decimal-leading-zero);color:var(--accent)}
+body.review-ledger .review-tags a:last-child{display:block;text-align:center;background:var(--paper)}
+
+body.review-stack .review-tags{border:0;padding:0}
+body.review-stack .review-tags h3{font-size:27px}
+body.review-stack .review-tags nav{display:grid;gap:9px;padding-right:7px}
+body.review-stack .review-tags a{border:1px solid var(--line);background:var(--surface);padding:10px;box-shadow:5px 5px 0 color-mix(in srgb,var(--accent) 26%,var(--paper));font:12px var(--sans)}
+body.review-stack .review-tags a:nth-child(even){margin-left:10px}
+body.review-stack .review-tags a span{color:var(--accent)}
+
+body.review-feature .review-tags{border:0;padding:0}
+body.review-feature .review-tags h3{font:400 29px var(--heading)}
+body.review-feature .review-tags a:first-child{display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding:15px;background:var(--accent);color:var(--paper);border:0;font:700 17px/1.2 var(--heading)}
+body.review-feature .review-tags a:first-child span{color:var(--paper);font:12px var(--mono)}
+body.review-feature .review-tags a:not(:first-child){padding:11px 0;font:12px var(--sans)}
+body.review-feature .review-tags a:last-child{border:0;font-weight:700}
+
+body.review-diagonal .review-tags{border:0;padding:0}
+body.review-diagonal .review-tags h3{font:400 29px var(--heading)}
+body.review-diagonal .review-tags nav{display:grid;gap:7px}
+body.review-diagonal .review-tags a{border:0;background:var(--surface);padding:11px 10px;box-shadow:inset 4px 0 var(--accent);font:12px var(--sans)}
+body.review-diagonal .review-tags a:nth-child(even){margin-left:18px;box-shadow:inset 4px 0 color-mix(in srgb,var(--accent) 45%,var(--paper))}
+body.review-diagonal .review-tags a span{color:var(--accent)}
+
+body.review-timeline .review-tags{border:0;padding:0}
+body.review-timeline .review-tags h3{font:400 28px var(--heading)}
+body.review-timeline .review-tags nav{border-left:2px solid var(--line);margin-left:7px}
+body.review-timeline .review-tags a{position:relative;border:0;padding:9px 0 12px 18px;font:12px var(--sans)}
+body.review-timeline .review-tags a:before{content:'';position:absolute;left:-6px;top:15px;width:8px;height:8px;border-radius:50%;border:1px solid var(--accent);background:var(--paper)}
+body.review-timeline .review-tags a span{color:var(--accent)}
+
+body.review-chapters .review-tags{border:0;padding:0}
+body.review-chapters .review-tags h3{font:400 28px var(--heading);margin-bottom:14px}
+body.review-chapters .review-tags nav{counter-reset:tagChapter;display:grid;gap:5px}
+body.review-chapters .review-tags a{position:relative;display:grid;grid-template-columns:25px minmax(0,1fr) auto;gap:4px;align-items:center;border:1px solid var(--line);background:var(--surface);padding:9px 7px;font:11px/1.25 var(--sans)}
+body.review-chapters .review-tags a:not(:last-child):before{counter-increment:tagChapter;content:counter(tagChapter,decimal-leading-zero);color:var(--accent);font:700 10px var(--mono)}
+body.review-chapters .review-tags a:last-child{display:block;text-align:center;background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+
+body.review-library .review-tags{border:1px solid var(--line);padding:14px;background:#193429}
+body.review-library .review-tags>span{color:var(--accent)}
+body.review-library .review-tags h3{font:400 28px var(--heading);border-bottom:1px solid var(--line);padding-bottom:13px}
+body.review-library .review-tags nav{display:grid;gap:5px}
+body.review-library .review-tags a{background:#244438;border:1px solid var(--line);color:var(--ink);padding:9px;font:12px var(--sans)}
+body.review-library .review-tags a span{color:var(--accent)}
+body.review-library .review-tags a:hover{border-color:var(--accent)}
+
+@media(max-width:750px){body.review-gallery .review-tags nav,body.review-accordion .review-tags nav,body.review-stack .review-tags nav,body.review-diagonal .review-tags nav,body.review-chapters .review-tags nav,body.review-library .review-tags nav{display:flex;flex-wrap:wrap}body.review-gallery .review-tags a,body.review-stack .review-tags a,body.review-diagonal .review-tags a,body.review-library .review-tags a{min-height:auto;margin-left:0}body.review-feature .review-tags a:first-child{gap:7px}body.review-timeline .review-tags nav{display:flex;flex-wrap:wrap;border-left:0;margin-left:0}body.review-timeline .review-tags a:before{display:none}}

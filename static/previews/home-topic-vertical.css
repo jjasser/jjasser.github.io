@@ -1,0 +1,20 @@
+.topic-palette-controls{position:sticky;top:0;z-index:1100;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;padding:11px max(20px,calc((100vw - 1152px)/2));background:var(--surface);border-bottom:1px solid var(--line);font:12px var(--sans)}
+.topic-palette-controls strong{grid-column:1/-1;font:700 12px var(--sans)}
+.topic-palette-controls button{display:flex;align-items:center;gap:9px;min-width:0;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:9px;font:700 11px var(--mono);cursor:pointer;text-align:left}
+.topic-palette-controls button:before{content:'';flex:none;width:14px;height:14px;background:var(--swatch);border:1px solid #0002}
+.topic-palette-controls button[aria-pressed=true]{border-color:var(--swatch);box-shadow:inset 0 0 0 1px var(--swatch)}
+.topic-palette-controls button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.topic-palette-controls [data-topic-option=reference]{--swatch:#d5e2d6}
+.topic-palette-controls [data-topic-option=forest]{--swatch:#315b44}
+.topic-palette-controls [data-topic-option=eucalyptus]{--swatch:#8daa99}
+.topic-palette-controls [data-topic-option=willow]{--swatch:#d7e4ca}
+.topic-palette-controls [data-topic-option=greenstone]{--swatch:#c4dbd0}
+.topic-palette-controls [data-topic-option=lichen]{--swatch:#dddcca}
+html:not([data-dark-palette]) body[data-topic-palette=reference] .home-topics{--topic-strong:#d5e2d6;--topic-medium:#e4ece3;--topic-low:#f0f4ee;--topic-highlight:#285e47;--topic-strong-ink:#214b38}
+html:not([data-dark-palette]) body[data-topic-palette=forest] .home-topics{--topic-strong:#315b44;--topic-medium:#d9e6da;--topic-low:#edf3ec;--topic-highlight:#315b44;--topic-strong-ink:#fff}
+html:not([data-dark-palette]) body[data-topic-palette=eucalyptus] .home-topics{--topic-strong:#8daa99;--topic-medium:#dbe8dc;--topic-low:#edf4ec;--topic-highlight:#315b44;--topic-strong-ink:#173d2b}
+html:not([data-dark-palette]) body[data-topic-palette=willow] .home-topics{--topic-strong:#d7e4ca;--topic-medium:#e6eedc;--topic-low:#f2f6ec;--topic-highlight:#4f653b;--topic-strong-ink:#294b35}
+html:not([data-dark-palette]) body[data-topic-palette=greenstone] .home-topics{--topic-strong:#c4dbd0;--topic-medium:#dbe9e1;--topic-low:#eef4ef;--topic-highlight:#356454;--topic-strong-ink:#1d493c}
+html:not([data-dark-palette]) body[data-topic-palette=lichen] .home-topics{--topic-strong:#dddcca;--topic-medium:#e9e9db;--topic-low:#f4f4ea;--topic-highlight:#586447;--topic-strong-ink:#44523b}
+@media(max-width:1000px){.topic-palette-controls{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.topic-palette-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-palette-controls button{font-size:10px}}
