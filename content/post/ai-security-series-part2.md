@@ -3,10 +3,7 @@ author = "Jacob"
 title = "Attacking AI Agents: Direct Prompt Injection in Practice (Part 2)"
 date = "2026-06-21"
 description = "Hands-on work against lab AI agents: mapping the attack surface, bypassing an output filter with a formatting trick, and getting past keyword detection with goal hijacking."
-tags = [
-    "ai-security",
-    "red-teaming",
-]
+tags = ["prompt-injection"]
 categories = [
     "AI Security",
 ]

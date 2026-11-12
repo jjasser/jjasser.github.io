@@ -55,5 +55,6 @@
     <footer class="site-footer"><span>© {{ now.Year }} Jacob Jasser</span><nav aria-label="Footer navigation"><a href="{{ "/about/#certifications" | relURL }}">Certifications</a><a href="{{ "/index.xml" | relURL }}">RSS</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></nav></footer>
   </div>
   {{ $darkJs := resources.Get "js/site-theme.js" | minify | fingerprint }}<script src="{{ $darkJs.RelPermalink }}" defer></script>
+  {{ if .IsHome }}{{ $homeWritingJs := resources.Get "js/home-writing.js" | minify | fingerprint }}<script src="{{ $homeWritingJs.RelPermalink }}" defer></script>{{ end }}
 </body>
 </html>

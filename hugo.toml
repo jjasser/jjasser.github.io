@@ -32,6 +32,11 @@ pageRef = "/post"
 weight = 200
 
 [[menu.main]]
+name = "Tags"
+url = "/#writing"
+weight = 250
+
+[[menu.main]]
 name = "About"
 pageRef = "/about"
 weight = 300

@@ -3,10 +3,7 @@ author = "Jacob"
 title = "Beating Gandalf: A Prompt Injection Walkthrough"
 date = "2026-03-24"
 description = "A level-by-level walkthrough of the Lakera Gandalf prompt injection challenge, covering direct injection, payload obfuscation, character exfiltration, pseudo-code smuggling, and storytelling bypasses."
-tags = [
-    "ai-security",
-    "red-teaming",
-]
+tags = ["prompt-injection"]
 categories = [
     "AI Security",
 ]
